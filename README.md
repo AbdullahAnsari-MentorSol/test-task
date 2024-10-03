@@ -33,10 +33,12 @@ To expose the endpoint to be invoked by the external, serverless job dispatcher 
 ```ts
 // app/api/jobs/[type]/route.ts
 
-import { requestHandler } from "@myall/jobs"
+import { requestHandler } from "@myapp/jobs"
 
 export const runtime = "nodejs"
 export const maxDuration = 300
+
+export const POST = requestHandler
 ```
 
 ## Challenges
