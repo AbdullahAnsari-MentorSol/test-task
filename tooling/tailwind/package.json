@@ -1,0 +1,30 @@
+{
+  "name": "@kreios/tailwind-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "LicenseRef-LICENSE",
+  "type": "module",
+  "exports": {
+    "./native": "./native.ts",
+    "./web": "./web.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@kreios/prettier-config",
+  "dependencies": {
+    "tailwindcss": "3.4.10",
+    "tailwindcss-animate": "1.0.7"
+  },
+  "devDependencies": {
+    "@kreios/eslint-config": "workspace:*",
+    "@kreios/prettier-config": "workspace:*",
+    "@kreios/tsconfig": "workspace:*",
+    "eslint": "9.10.0",
+    "prettier": "3.3.3",
+    "typescript": "5.6.2"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "kreios-playground",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@8.6.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "tooling/*"
+  ],
+  "scripts": {
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test -- --reporter verbose"
+  },
+  "devDependencies": {
+    "turbo": "latest"
+  }
+}

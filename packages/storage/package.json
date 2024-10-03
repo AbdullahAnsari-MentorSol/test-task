@@ -12,7 +12,9 @@
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --typecheck",
+    "test:watch": "vitest --typecheck"
   },
   "prettier": "@kreios/prettier-config",
   "dependencies": {

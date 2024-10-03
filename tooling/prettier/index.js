@@ -13,7 +13,7 @@ const config = {
   tabWidth: 2,
   trailingComma: "es5",
   plugins: ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
-  tailwindConfig: fileURLToPath(new URL("../../platform/tailwind/web.ts", import.meta.url)),
+  tailwindConfig: fileURLToPath(new URL("../../tooling/tailwind/web.ts", import.meta.url)),
   tailwindFunctions: ["cn", "cva"],
   importOrder: [
     "<TYPES>",
