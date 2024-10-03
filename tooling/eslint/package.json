@@ -1,0 +1,33 @@
+{
+  "name": "@kreios/eslint-config",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base": "./base.js",
+    "./nextjs": "./nextjs.js",
+    "./react": "./react.js"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@kreios/prettier-config",
+  "devDependencies": {
+    "@eslint/js": "9.10.0",
+    "@kreios/prettier-config": "workspace:*",
+    "@kreios/tsconfig": "workspace:*",
+    "@next/eslint-plugin-next": "14.2.9",
+    "eslint": "9.10.0",
+    "eslint-plugin-import": "2.30.0",
+    "eslint-plugin-notice": "1.0.0",
+    "eslint-plugin-react": "7.35.2",
+    "eslint-plugin-react-compiler": "0.0.0-experimental-c8b3f72-20240517",
+    "eslint-plugin-react-hooks": "rc",
+    "eslint-plugin-turbo": "2.1.1",
+    "prettier": "3.3.3",
+    "typescript": "5.6.2",
+    "typescript-eslint": "8.5.0"
+  }
+}
