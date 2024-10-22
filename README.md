@@ -43,7 +43,7 @@ export const POST = requestHandler
 
 ## Challenges
 
-After you've familiarized yourself with the codebase, choose **one or more** of the following challenges to work on. You don't need to complete all of them—**focus on delivering high-quality solutions**. We're interested in seeing your problem-solving approach and coding style.
+After you've familiarized yourself with the codebase, please complete **both** of the following challenges. We're interested in seeing your problem-solving approach and coding style.
 
 1. **Update Job Dispatcher to Use Trigger.dev**
 
@@ -53,15 +53,13 @@ After you've familiarized yourself with the codebase, choose **one or more** of 
 
    Restructure the `jobs` package to support swappable provider implementations using a common Service Provider Interface (SPI), similar to the architecture in the `storage` package. This will allow for easier integration of different job dispatcher services in the future.
 
-3. **Add Azure Data Lake Storage Provider**
-
-   Implement a new storage provider in the `storage` package to add support for Azure Data Lake. This will expand the storage options available to the Data Platform, catering to projects that require Azure Data Lake integration.
-
 ## How to Approach the Task
 
-- **Time Management**: Please spend **no more than one day** (approximately 8 hours) on this test task. To keep the process efficient, try to complete your work within a timeframe of **2-3 days**.
+- **Time Management and Logging**: Please spend **no more than one day** (approximately 8 hours) on this test task. To keep the process efficient, try to complete your work within a timeframe of **2-3 days**. It's crucial to log your time accurately as you work. Retroactive time logging is not possible, so track your time diligently throughout the process and do not exceed the maximum allotted number of billable hours (8 hours).
 
-- **Quality Over Quantity**: Focus on delivering well-thought-out and high-quality code. It's better to thoroughly complete one challenge than to attempt all of them superficially.
+- **Quality Over Quantity**: Focus on delivering well-thought-out and high-quality code. It's crucial to ensure that your changes actually work and that existing unit tests continue to pass. Remember, it's not just about completing the tasks; it's about how you approach them. Ensure your changes are well-tested, functional, and don't break existing functionality.
+
+- **Use of AI Tools**: You are free to use AI tools such as GitHub Copilot or Cursor AI. However, it's essential that you understand and can explain every change you make. Keep unnecessary changes to a minimum and ensure that your solution is functional and well-tested before submission.
 
 - **Communication**: If you have any questions or need clarification, feel free to reach out to us via Upwork. We're here to help!
 
@@ -76,6 +74,7 @@ After you've familiarized yourself with the codebase, choose **one or more** of 
 7. **Include a Submission Message**: In your submission message on Upwork, please include:
    - A brief overview of the changes you made.
    - Any challenges you faced and how you overcame them.
+   - An explanation of how you tested your changes and ensured they work correctly.
    - Any additional thoughts or explanations about your implementation.
 
 ## Important Notes
