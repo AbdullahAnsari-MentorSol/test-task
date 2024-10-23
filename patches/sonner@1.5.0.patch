@@ -1,0 +1,93 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index a86a040dc112aead4b0757ed44dc74c75d0944ac..e8243711d1798ab57fcb0670450e1630970128ca 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1,17 +1,17 @@
+ import React from 'react';
+ 
+-type ToastTypes = 'normal' | 'action' | 'success' | 'info' | 'warning' | 'error' | 'loading' | 'default';
+-type PromiseT<Data = any> = Promise<Data> | (() => Promise<Data>);
+-type PromiseTResult<Data = any> = string | React.ReactNode | ((data: Data) => React.ReactNode | string | Promise<React.ReactNode | string>);
+-type PromiseExternalToast = Omit<ExternalToast, 'description'>;
+-type PromiseData<ToastData = any> = PromiseExternalToast & {
++export type ToastTypes = 'normal' | 'action' | 'success' | 'info' | 'warning' | 'error' | 'loading' | 'default';
++export type PromiseT<Data = any> = Promise<Data> | (() => Promise<Data>);
++export type PromiseTResult<Data = any> = string | React.ReactNode | ((data: Data) => React.ReactNode | string | Promise<React.ReactNode | string>);
++export type PromiseExternalToast = Omit<ExternalToast, 'description'>;
++export type PromiseData<ToastData = any> = PromiseExternalToast & {
+     loading?: string | React.ReactNode;
+     success?: PromiseTResult<ToastData>;
+     error?: PromiseTResult;
+     description?: PromiseTResult;
+     finally?: () => void | Promise<void>;
+ };
+-interface ToastClassnames {
++export interface ToastClassnames {
+     toast?: string;
+     title?: string;
+     description?: string;
+@@ -28,19 +28,19 @@ interface ToastClassnames {
+     content?: string;
+     icon?: string;
+ }
+-interface ToastIcons {
++export interface ToastIcons {
+     success?: React.ReactNode;
+     info?: React.ReactNode;
+     warning?: React.ReactNode;
+     error?: React.ReactNode;
+     loading?: React.ReactNode;
+ }
+-interface Action {
++export interface Action {
+     label: React.ReactNode;
+     onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+     actionButtonStyle?: React.CSSProperties;
+ }
+-interface ToastT {
++export interface ToastT {
+     id: number | string;
+     title?: string | React.ReactNode;
+     type?: ToastTypes;
+@@ -68,8 +68,8 @@ interface ToastT {
+     descriptionClassName?: string;
+     position?: Position;
+ }
+-type Position = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
+-interface ToastOptions {
++export type Position = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
++export interface ToastOptions {
+     className?: string;
+     closeButton?: boolean;
+     descriptionClassName?: string;
+@@ -80,8 +80,8 @@ interface ToastOptions {
+     unstyled?: boolean;
+     classNames?: ToastClassnames;
+ }
+-type CnFunction = (...classes: Array<string | undefined>) => string;
+-interface ToasterProps {
++export type CnFunction = (...classes: Array<string | undefined>) => string;
++export interface ToasterProps {
+     invert?: boolean;
+     theme?: 'light' | 'dark' | 'system';
+     position?: Position;
+@@ -111,11 +111,11 @@ interface ToasterProps {
+     pauseWhenPageIsHidden?: boolean;
+     cn?: CnFunction;
+ }
+-interface ToastToDismiss {
++export interface ToastToDismiss {
+     id: number | string;
+     dismiss: boolean;
+ }
+-type ExternalToast = Omit<ToastT, 'id' | 'type' | 'title' | 'jsx' | 'delete' | 'promise'> & {
++export type ExternalToast = Omit<ToastT, 'id' | 'type' | 'title' | 'jsx' | 'delete' | 'promise'> & {
+     id?: number | string;
+ };
+ 
+@@ -138,4 +138,4 @@ declare function useSonner(): {
+ };
+ declare const Toaster: (props: ToasterProps) => JSX.Element;
+ 
+-export { ExternalToast, ToastT, Toaster, ToasterProps, toast, useSonner };
++export { Toaster, toast, useSonner };

@@ -1,21 +1,52 @@
 {
-  "name": "kreios-playground",
+  "name": "kreios-data-platform-prototype",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@8.6.0",
-  "type": "module",
-  "workspaces": [
-    "packages/*",
-    "tooling/*"
-  ],
+  "license": "LicenseRef-LICENSE",
   "scripts": {
-    "lint": "turbo run lint",
-    "format": "turbo run format",
     "build": "turbo run build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo run clean",
     "dev": "turbo run dev",
-    "test": "turbo run test -- --reporter verbose"
+    "format": "turbo run format --continue -- --cache --cache-location node_modules/.cache/.prettiercache",
+    "format:fix": "turbo run format --continue -- --write --cache --cache-location node_modules/.cache/.prettiercache",
+    "postinstall": "pnpm sortpackages && pnpm lint:ws",
+    "knip": "SKIP_ENV_VALIDATION=1 knip",
+    "lint": "turbo run lint --continue -- --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:ws": "pnpm dlx sherif@latest -r non-existant-packages && pnpm syncpack lint",
+    "sortpackages": "sort-package-json \"package.json\" \"platform/*/package.json\" \"projects/*/*/package.json\"",
+    "test": "turbo run test --continue",
+    "test:watch": "turbo run test:watch",
+    "typecheck": "turbo run typecheck",
+    "ui-add": "pnpm --filter=ui ui-add"
   },
+  "prettier": "@kreios/prettier-config",
   "devDependencies": {
-    "turbo": "latest"
+    "@kreios/prettier-config": "workspace:*",
+    "@types/node": "20.14.10",
+    "@vitest/coverage-v8": "2.1.1",
+    "knip": "5.30.2",
+    "prettier": "3.3.3",
+    "sort-package-json": "2.10.1",
+    "syncpack": "13.0.0",
+    "turbo": "2.1.1",
+    "typescript": "5.6.2",
+    "vite-tsconfig-paths": "5.0.1",
+    "vitest": "2.0.5"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "engines": {
+    "node": ">=20.12.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "18.3.1",
+      "react-dom": "18.3.1"
+    },
+    "patchedDependencies": {
+      "sonner@1.5.0": "patches/sonner@1.5.0.patch",
+      "vaul@0.9.2": "patches/vaul@0.9.2.patch"
+    }
   }
 }

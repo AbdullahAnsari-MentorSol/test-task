@@ -1,0 +1,47 @@
+{
+  "name": "@kreios/example",
+  "version": "0.1.0",
+  "private": true,
+  "license": "LicenseRef-LICENSE",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm with-env next build",
+    "clean": "git clean -xdf .next .turbo node_modules",
+    "dev": "pnpm with-env next dev --turbo",
+    "format": "prettier --check . --ignore-path ../../../.gitignore --ignore-path ../../../.prettierignore",
+    "lint": "eslint",
+    "start": "pnpm with-env next start",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenvx run -q -f ../../../.env.local -f ../../../.env --overload --"
+  },
+  "prettier": "@kreios/prettier-config",
+  "dependencies": {
+    "@example/jobs": "workspace:*",
+    "@kreios/ui": "workspace:*",
+    "@sentry/nextjs": "8.30.0",
+    "@t3-oss/env-nextjs": "0.11.1",
+    "@vercel/toolbar": "0.1.18",
+    "glob": "11.0.0",
+    "next": "14.2.13",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "1.14.0",
+    "@kreios/eslint-config": "workspace:*",
+    "@kreios/prettier-config": "workspace:*",
+    "@kreios/tailwind-config": "workspace:*",
+    "@kreios/tsconfig": "workspace:*",
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.20",
+    "eslint": "9.10.0",
+    "jiti": "2.0.0-rc.1",
+    "postcss": "8.4.45",
+    "prettier": "3.3.3",
+    "tailwindcss": "3.4.10",
+    "typescript": "5.6.2"
+  }
+}

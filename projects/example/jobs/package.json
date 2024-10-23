@@ -1,0 +1,40 @@
+{
+  "name": "@example/jobs",
+  "version": "0.1.0",
+  "private": true,
+  "license": "LicenseRef-LICENSE",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./env": "./env.ts",
+    "./cdc/*": "./src/cdc/*.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "cli": "pnpm with-env tsx src/cli.ts",
+    "format": "prettier --check . --ignore-path ../../../.gitignore --ignore-path ../../../.prettierignore",
+    "lint": "eslint",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenvx run -f ../../../.env.local -f ../../../.env --overload --"
+  },
+  "prettier": "@kreios/prettier-config",
+  "dependencies": {
+    "@kreios/jobs": "workspace:*",
+    "@t3-oss/env-core": "0.11.1",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "1.14.0",
+    "@kreios/eslint-config": "workspace:*",
+    "@kreios/prettier-config": "workspace:*",
+    "@kreios/tsconfig": "workspace:*",
+    "@types/node": "20.14.10",
+    "eslint": "9.10.0",
+    "prettier": "3.3.3",
+    "tsx": "4.19.0",
+    "typescript": "5.6.2",
+    "vitest": "2.0.5"
+  }
+}

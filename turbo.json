@@ -1,7 +1,62 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "$schema": "https://turborepo.org/schema.json",
+  "globalPassThroughEnv": [
+    "NODE_ENV",
+    "PORT",
+    "NEXT_PUBLIC_TURBOPACK",
+    "CI",
+    "VERCEL",
+    "VERCEL_ENV",
+    "VERCEL_URL",
+    "npm_lifecycle_event",
+    "SKIP_ENV_VALIDATION"
+  ],
+  "ui": "tui",
+  "globalDependencies": ["**/.env*"],
   "globalEnv": [
+    "AUTH_EMAIL_REGEX",
+    "DATABASE_DATABASE",
+    "DATABASE_HOST",
+    "DATABASE_PASSWORD",
+    "DATABASE_PRISMA_URL",
+    "DATABASE_URL",
+    "DATABASE_URL_NO_SSL",
+    "DATABASE_URL_NON_POOLING",
+    "DATABASE_USER",
+    "ELASTICSEARCH_API_KEY",
+    "ELASTICSEARCH_URL",
+    "GCLOUD_LOCATION",
+    "GCLOUD_PROJECT_ID",
+    "GCLOUD_SERVICE_ACCOUNT_KEY",
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET",
+    "GOOGLE_MAPS_API_KEY",
+    "KV_REST_API_READ_ONLY_TOKEN",
+    "KV_REST_API_TOKEN",
+    "KV_REST_API_URL",
+    "KV_URL",
+    "NEXT_PUBLIC_SENTRY_DSN",
+    "NEXTAUTH_SECRET",
+    "OPENAI_API_KEY",
+    "POSTGRES_DATABASE",
+    "POSTGRES_HOST",
+    "POSTGRES_PASSWORD",
+    "POSTGRES_PRISMA_URL",
+    "POSTGRES_URL",
+    "POSTGRES_URL_NO_SSL",
+    "POSTGRES_URL_NON_POOLING",
+    "POSTGRES_USER",
+    "QSTASH_CURRENT_SIGNING_KEY",
+    "QSTASH_NEXT_SIGNING_KEY",
+    "QSTASH_TOKEN",
+    "RESEND_API_KEY",
+    "RESEND_FROM_EMAIL",
+    "AZURE_COMMUNICATION_CONNECTION_STRING",
+    "AZURE_COMMUNICATION_FROM_EMAIL",
+    "SECRET_KEY",
+    "STABILITYAI_API_KEY",
+    "UPLOADTHING_APP_ID",
+    "UPLOADTHING_SECRET",
     "AZURE_CONNECTION_STRING",
     "AZURE_CONTAINER_NAME",
     "AZURE_ACCOUNT_NAME",
@@ -9,19 +64,50 @@
     "AWS_ACCESS_KEY_ID",
     "AWS_SECRET_ACCESS_KEY",
     "AWS_REGION",
-    "AWS_S3_BUCKET"
+    "AWS_S3_BUCKET",
+    "NEXT_OUTPUT",
+    "GRAPHQL_API_KEYS",
+    "BACKEND_API_URL",
+    "BACKEND_API_TOKEN",
+    "PLATFORM_RESOURCE_NAMESPACE"
   ],
+  "remoteCache": {
+    "enabled": true
+  },
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": [".next/**", "!.next/cache/**", "next-env.d.ts", ".expo/**", ".output/**", ".vercel/output/**"]
     },
-    "lint": {},
-    "format": {},
+    "clean": {
+      "cache": false
+    },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "test": {}
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "format": {
+      "outputs": ["node_modules/.cache/.prettiercache"],
+      "outputLogs": "new-only"
+    },
+    "test": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.vite/vitest"]
+    },
+    "lint": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/.eslintcache"]
+    },
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "typecheck": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+    }
   }
 }

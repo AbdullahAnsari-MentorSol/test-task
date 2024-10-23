@@ -1,0 +1,58 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run All Tasks",
+      "dependsOn": ["test", "knip", "lint", "format", "typecheck"],
+      "group": {
+        "kind": "none",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test"],
+      "label": "test",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["knip"],
+      "label": "knip",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["lint:fix"],
+      "label": "lint",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["format:fix"],
+      "label": "format",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["typecheck"],
+      "label": "typecheck",
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}

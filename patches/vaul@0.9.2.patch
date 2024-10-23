@@ -1,0 +1,46 @@
+diff --git a/dist/index.d.mts b/dist/index.d.mts
+index 46aa87e85ffbdcde779dcea9fd0110e6ccf2216f..256f50d3627586ef9fe4f6bf49650a0c9adfc4dd 100644
+--- a/dist/index.d.mts
++++ b/dist/index.d.mts
+@@ -1,15 +1,15 @@
+ import * as DialogPrimitive from '@radix-ui/react-dialog';
+ import React from 'react';
+ 
+-interface WithFadeFromProps {
++export interface WithFadeFromProps {
+     snapPoints: (number | string)[];
+     fadeFromIndex: number;
+ }
+-interface WithoutFadeFromProps {
++export interface WithoutFadeFromProps {
+     snapPoints?: (number | string)[];
+     fadeFromIndex?: never;
+ }
+-type DialogProps = {
++export type DialogProps = {
+     activeSnapPoint?: number | string | null;
+     setActiveSnapPoint?: (snapPoint: number | string | null) => void;
+     children?: React.ReactNode;
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 46aa87e85ffbdcde779dcea9fd0110e6ccf2216f..256f50d3627586ef9fe4f6bf49650a0c9adfc4dd 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1,15 +1,15 @@
+ import * as DialogPrimitive from '@radix-ui/react-dialog';
+ import React from 'react';
+ 
+-interface WithFadeFromProps {
++export interface WithFadeFromProps {
+     snapPoints: (number | string)[];
+     fadeFromIndex: number;
+ }
+-interface WithoutFadeFromProps {
++export interface WithoutFadeFromProps {
+     snapPoints?: (number | string)[];
+     fadeFromIndex?: never;
+ }
+-type DialogProps = {
++export type DialogProps = {
+     activeSnapPoint?: number | string | null;
+     setActiveSnapPoint?: (snapPoint: number | string | null) => void;
+     children?: React.ReactNode;

@@ -1,0 +1,10 @@
+{
+  "extends": "@kreios/tsconfig/base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "dom"],
+    "target": "ESNext",
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "include": ["*.ts", "src"],
+  "exclude": ["node_modules"]
+}

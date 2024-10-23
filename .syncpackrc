@@ -1,0 +1,46 @@
+{
+  "$schema": "https://unpkg.com/syncpack@12.3.2/dist/schema.json",
+  "lintFormatting": false,
+  "semverGroups": [
+    {
+      "packages": [
+        "**"
+      ],
+      "dependencies": [
+        "eslint-plugin-react-hooks",
+        "typescript-eslint"
+      ],
+      "isIgnored": true
+    },
+    {
+      "label": "use exact version numbers in production",
+      "packages": [
+        "**"
+      ],
+      "dependencyTypes": [
+        "**"
+      ],
+      "dependencies": [
+        "**"
+      ],
+      "range": ""
+    }
+  ],
+  "versionGroups": [
+    {
+      "label": "Use workspace protocol when developing local packages",
+      "dependencies": [
+        "$LOCAL"
+      ],
+      "dependencyTypes": [
+        "dev",
+        "overrides",
+        "peer",
+        "pnpmOverrides",
+        "prod",
+        "resolutions"
+      ],
+      "pinVersion": "workspace:*"
+    }
+  ]
+}

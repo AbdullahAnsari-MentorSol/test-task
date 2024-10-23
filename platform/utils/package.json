@@ -1,0 +1,39 @@
+{
+  "name": "@kreios/utils",
+  "version": "0.1.0",
+  "private": true,
+  "license": "LicenseRef-LICENSE",
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore",
+    "lint": "eslint",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@kreios/prettier-config",
+  "dependencies": {
+    "chalk": "5.3.0",
+    "dataloader": "2.2.2",
+    "date-fns": "4.1.0",
+    "lodash-es": "4.17.21",
+    "nanoid": "5.0.7",
+    "tinycolor2": "1.6.0"
+  },
+  "devDependencies": {
+    "@kreios/eslint-config": "workspace:*",
+    "@kreios/prettier-config": "workspace:*",
+    "@kreios/tsconfig": "workspace:*",
+    "@types/lodash-es": "4.17.12",
+    "@types/node": "20.14.10",
+    "@types/tinycolor2": "1.4.6",
+    "eslint": "9.10.0",
+    "prettier": "3.3.3",
+    "typescript": "5.6.2",
+    "vitest": "2.0.5"
+  }
+}

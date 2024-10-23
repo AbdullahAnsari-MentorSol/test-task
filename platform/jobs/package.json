@@ -1,0 +1,36 @@
+{
+  "name": "@kreios/jobs",
+  "version": "0.1.0",
+  "private": true,
+  "license": "LicenseRef-LICENSE",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --check . --write --ignore-path ../../.gitignore --ignore-path ../../.prettierignore",
+    "lint": "eslint",
+    "test": "vitest run --typecheck",
+    "test:watch": "vitest --typecheck",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@kreios/prettier-config",
+  "dependencies": {
+    "@commander-js/extra-typings": "12.1.0",
+    "@upstash/qstash": "2.7.6",
+    "superjson": "2.2.1",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@kreios/eslint-config": "workspace:*",
+    "@kreios/prettier-config": "workspace:*",
+    "@kreios/tsconfig": "workspace:*",
+    "@types/node": "20.14.10",
+    "eslint": "9.10.0",
+    "prettier": "3.3.3",
+    "typescript": "5.6.2",
+    "vitest": "2.0.5"
+  }
+}

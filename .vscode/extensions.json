@@ -1,0 +1,25 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "expo.vscode-expo-tools",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss",
+    "github.vscode-pull-request-github",
+    "mikestead.dotenv",
+    "github.vscode-github-actions",
+    "eamodio.gitlens",
+    "vercel.turbo-vsc",
+    "skaramicke.copy-combined-markdown",
+    "vitest.explorer",
+    "graphql.vscode-graphql-syntax",
+    "graphql.vscode-graphql",
+    "actboy168.tasks",
+    "fabiospampinato.vscode-diff",
+    "caponetto.vscode-diff-viewer",
+    "hashicorp.terraform",
+    "unifiedjs.vscode-mdx",
+    "yzhang.markdown-all-in-one",
+    "dexxiez.shadcn-color-preview"
+  ]
+}

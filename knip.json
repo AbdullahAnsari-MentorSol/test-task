@@ -1,0 +1,21 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignoreDependencies": ["tsx", "prettier", "@vitest/coverage-v8"],
+  "ignore": [
+    "**/eslint.config.js",
+    "projects/**/app/src/components/uploadthing.tsx",
+    "platform/utils/src/types/drop-first.ts",
+    "platform/command-menu/src/commands/routes-commands.tsx"
+  ],
+  "workspaces": {
+    ".": {
+      "entry": ["turbo/generators/config.ts"]
+    },
+    "projects/*/app": {
+      "entry": ["src/env.ts"]
+    },
+    "projects/*/*": {
+      "entry": ["**/cli.ts"]
+    }
+  }
+}
